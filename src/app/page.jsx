@@ -15,7 +15,6 @@ export default function LandingPage() {
     <main>
       <Navbar />
       <Hero />
-      <div className="min-h-screen bg-black"></div>
     </main>
   );
 }
