@@ -6,7 +6,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const About = () => {
   useGSAP(() => {
-    const titleSplit = SplitText.create("h2", { type: "lines" });
+    const titleSplit = SplitText.create("#about h2", { type: "lines" });
 
     const paragraphsSplit = SplitText.create(".animate-para", {
       type: "lines",
