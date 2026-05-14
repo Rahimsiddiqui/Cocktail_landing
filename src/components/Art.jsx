@@ -32,15 +32,15 @@ const Art = () => {
   });
 
   return (
-    <section id="art">
+    <section id="art" aria-label="The Art section">
       <div className="container mx-auto h-full pt-20">
         <h2 className="will-fade">The ART</h2>
 
         <div className="content">
-          <ul className="space-y-4 will-fade">
+          <ul className="space-y-4 will-fade" aria-label="Our bartending features">
             {goodLists.map((feature, index) => (
               <li key={index} className="flex items-center gap-2">
-                <img src="/images/check.png" alt="check" />
+                <img src="/images/check.png" alt="" aria-hidden="true" />
                 <p>{feature}</p>
               </li>
             ))}
@@ -49,15 +49,15 @@ const Art = () => {
           <div className="cocktail-img">
             <img
               src="/images/under-img.jpg"
-              alt="cocktail"
+              alt="Featured cocktail presentation"
               className="abs-center masked-img size-full object-contain"
             />
           </div>
 
-          <ul className="space-y-4 will-fade">
+          <ul className="space-y-4 will-fade" aria-label="Our cocktail features">
             {featureLists.map((feature, index) => (
               <li key={index} className="flex items-center justify-start gap-2">
-                <img src="/images/check.png" alt="check" />
+                <img src="/images/check.png" alt="" aria-hidden="true" />
                 <p className="md:w-fit w-60">{feature}</p>
               </li>
             ))}

@@ -18,7 +18,7 @@ const Navbar = () => {
       { backgroundColor: "transparent" },
       {
         backgroundColor: "#00000050",
-        backgroundFilter: "blur(10px)",
+        backdropFilter: "blur(10px)",
         duration: 1,
         ease: "power1.inOut",
       },
@@ -26,15 +26,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav>
+    <nav aria-label="Main navigation">
       <div>
         <a
           href="#home"
           className="flex items-center gap-2.5 transition-opacity hover:opacity-95"
+          aria-label="Velvet Pour - Home"
         >
           <Image
             src="/images/logo.png"
-            alt="Logo Image"
+            alt="Velvet Pour logo"
             width={32}
             height={32}
             priority

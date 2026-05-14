@@ -55,13 +55,15 @@ const Menu = () => {
     <section id="menu" aria-labelledby="menu-heading">
       <img
         src="/images/slider-left-leaf.png"
-        alt="Left Leaf"
+        alt="Decorative left leaf"
         id="m-left-leaf"
+        aria-hidden="true"
       />
       <img
         src="/images/slider-right-leaf.png"
-        alt="Right Leaf"
+        alt="Decorative right leaf"
         id="m-right-leaf"
+        aria-hidden="true"
       />
 
       <h2 id="menu-heading" className="sr-only">
@@ -81,6 +83,8 @@ const Menu = () => {
                   ? "text-white border-white"
                   : "text-white/50 border-white/50"
               }
+              aria-current={isActive ? "page" : undefined}
+              aria-label={`View ${cocktail.name}`}
             >
               {cocktail.name}
             </button>
@@ -93,11 +97,12 @@ const Menu = () => {
           <button
             className="text-left"
             onClick={() => goToSlide(currentIdx - 1)}
+            aria-label={`Previous cocktail: ${prevCocktail.name}`}
           >
             {prevCocktail.name}
             <img
               src="/images/right-arrow.png"
-              alt="Right Arrow"
+              alt=""
               aria-hidden="true"
             />
           </button>
@@ -105,11 +110,12 @@ const Menu = () => {
           <button
             className="text-left"
             onClick={() => goToSlide(currentIdx + 1)}
+            aria-label={`Next cocktail: ${nextCocktail.name}`}
           >
             {nextCocktail.name}
             <img
               src="/images/left-arrow.png"
-              alt="Left Arrow"
+              alt=""
               aria-hidden="true"
             />
           </button>
@@ -118,7 +124,7 @@ const Menu = () => {
         <div className="cocktail">
           <img
             src={currCocktail.image}
-            alt="Current Cocktail Image"
+            alt={`${currCocktail.name} cocktail`}
             className="object-container"
           />
         </div>

@@ -44,16 +44,18 @@ const Contact = () => {
   });
 
   return (
-    <footer id="contact">
+    <footer id="contact" aria-label="Contact and location information">
       <img
         src="/images/footer-right-leaf.png"
-        alt="leaf-right"
+        alt="Decorative right leaf"
         id="f-right-leaf"
+        aria-hidden="true"
       />
       <img
         src="/images/footer-left-leaf.png"
-        alt="leaf-left"
+        alt="Decorative left leaf"
         id="f-left-leaf"
+        aria-hidden="true"
       />
 
       <div className="content">
@@ -66,8 +68,14 @@ const Contact = () => {
 
         <div>
           <h3>Contact Us</h3>
-          <p>+92 3472037476</p>
-          <p>rahimsiddiqui122@gmail.com</p>
+          <p>
+            <a href="tel:+923472037476">+92 3472037476</a>
+          </p>
+          <p>
+            <a href="mailto:rahimsiddiqui122@gmail.com">
+              rahimsiddiqui122@gmail.com
+            </a>
+          </p>
         </div>
 
         <div>
@@ -82,7 +90,7 @@ const Contact = () => {
         <div>
           <h3>Socials</h3>
 
-          <div className="flex-center gap-5">
+          <div className="flex-center gap-5" aria-label="Social media links">
             {socials.map((social) => (
               <a
                 key={social.name}
@@ -94,7 +102,7 @@ const Contact = () => {
                 <Image
                   width={28}
                   height={28}
-                  alt={social.name}
+                  alt=""
                   src={social.icon}
                 />
               </a>

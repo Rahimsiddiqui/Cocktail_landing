@@ -19,16 +19,18 @@ const Cocktails = () => {
   }, []);
 
   return (
-    <section id="cocktails" className="noisy">
+    <section id="cocktails" className="noisy" aria-label="Cocktails section">
       <img
         src="/images/cocktail-left-leaf.png"
-        alt="Left Leaf"
+        alt="Decorative left leaf"
         id="c-left-leaf"
+        aria-hidden="true"
       />
       <img
         src="/images/cocktail-right-leaf.png"
-        alt="Right Leaf"
+        alt="Decorative right leaf"
         id="c-right-leaf"
+        aria-hidden="true"
       />
 
       <div className="list">

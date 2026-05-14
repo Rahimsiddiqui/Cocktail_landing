@@ -51,7 +51,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about">
+    <section id="about" aria-label="About section">
       <div className="mb-16 px-5 md:px-0">
         <div className="content">
           <div className="md:col-span-8">
@@ -84,29 +84,29 @@ const About = () => {
       <div className="top-grid">
         <div className="md:col-span-3">
           <div className="noisy" />
-          <img src="/images/abt1.png" alt="grid-img-1" />
+          <img src="/images/abt1.png" alt="About our cocktails - image 1" />
         </div>
 
         <div className="md:col-span-6">
           <div className="noisy" />
-          <img src="/images/abt2.png" alt="grid-img-2" />
+          <img src="/images/abt2.png" alt="About our cocktails - image 2" />
         </div>
 
         <div className="md:col-span-3">
           <div className="noisy" />
-          <img src="/images/abt5.png" alt="grid-img-5" />
+          <img src="/images/abt5.png" alt="About our cocktails - image 5" />
         </div>
       </div>
 
       <div className="bottom-grid">
         <div className="md:col-span-8">
           <div className="noisy" />
-          <img src="/images/abt3.png" alt="grid-img-3" />
+          <img src="/images/abt3.png" alt="About our cocktails - image 3" />
         </div>
 
         <div className="md:col-span-4">
           <div className="noisy" />
-          <img src="/images/abt4.png" alt="grid-img-4" />
+          <img src="/images/abt4.png" alt="About our cocktails - image 4" />
         </div>
       </div>
     </section>

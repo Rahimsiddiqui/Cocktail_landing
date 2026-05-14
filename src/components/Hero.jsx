@@ -82,18 +82,20 @@ const Hero = () => {
 
   return (
     <>
-      <section id="hero" className="noisy">
+      <section id="hero" className="noisy" aria-label="Hero section">
         <h1 className="title">MOJITO</h1>
 
         <img
           src="/images/hero-left-leaf.png"
-          alt="left-leaf"
+          alt="Decorative left leaf"
           className="left-leaf"
+          aria-hidden="true"
         />
         <img
           src="/images/hero-right-leaf.png"
-          alt="right-leaf"
+          alt="Decorative right leaf"
           className="right-leaf"
+          aria-hidden="true"
         />
 
         <div className="body">
@@ -119,13 +121,14 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="video absolute inset-0">
+      <div className="video absolute inset-0" aria-label="Hero background video">
         <video
           src="/videos/output.mp4"
           ref={videoRef}
           muted
           playsInline
           preload="auto"
+          aria-hidden="true"
         />
       </div>
     </>
