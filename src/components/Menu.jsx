@@ -11,33 +11,42 @@ const Menu = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
 
   useGSAP(() => {
     if (tlRef.current) tlRef.current.kill();
-  
+
     const tl = gsap.timeline({
       onComplete: () => setIsAnimating(false),
     });
-  
+
     tlRef.current = tl;
-  
+
     tl.from(".cocktail img", {
       opacity: 0,
       xPercent: 40 * direction,
       scale: 0.8,
       duration: 0.6,
     })
-      .from("#title", {
-        opacity: 0,
-        yPercent: 35,
-        duration: 0.5,
-      }, "-=0.25")
-      .from(".details", {
-        opacity: 0,
-        yPercent: 35,
-        duration: 0.5,
-      }, "-=0.25");
-  
+      .from(
+        "#title",
+        {
+          opacity: 0,
+          yPercent: 35,
+          duration: 0.5,
+        },
+        "-=0.25",
+      )
+      .from(
+        ".details",
+        {
+          opacity: 0,
+          yPercent: 35,
+          duration: 0.5,
+        },
+        "-=0.25",
+      );
+
     return () => tl.kill();
   }, [currentIdx]);
 
@@ -45,12 +54,13 @@ const Menu = () => {
 
   const goToSlide = (idx) => {
     if (isAnimating) return;
-  
+
     setIsAnimating(true);
-  
+    setImageLoading(true);
+
     const newIdx = (idx + totalCocktails) % totalCocktails;
     setDirection(idx > currentIdx ? -1 : 1);
-  
+
     setCurrentIdx(newIdx);
   };
 
@@ -113,11 +123,7 @@ const Menu = () => {
             aria-label={`Previous cocktail: ${prevCocktail.name}`}
           >
             {prevCocktail.name}
-            <img
-              src="/images/right-arrow.png"
-              alt=""
-              aria-hidden="true"
-            />
+            <img src="/images/right-arrow.png" alt="" aria-hidden="true" />
           </button>
 
           <button
@@ -126,19 +132,21 @@ const Menu = () => {
             aria-label={`Next cocktail: ${nextCocktail.name}`}
           >
             {nextCocktail.name}
-            <img
-              src="/images/left-arrow.png"
-              alt=""
-              aria-hidden="true"
-            />
+            <img src="/images/left-arrow.png" alt="" aria-hidden="true" />
           </button>
         </div>
 
         <div className="cocktail">
+          {imageLoading && (
+            <div className="loading-placeholder text-2xl md:text-3xl">
+              Loading...
+            </div>
+          )}
           <img
             src={currCocktail.image}
             alt={`${currCocktail.name} cocktail`}
             className="object-container"
+            onLoad={() => setImageLoading(false)}
           />
         </div>
 

@@ -315,6 +315,10 @@ body {
       img {
         @apply object-contain h-[60vh];
       }
+
+      .loading-placeholder {
+        @apply abs-center text-xl font-semibold text-yellow;
+      }
     }
 
     .recipe {
