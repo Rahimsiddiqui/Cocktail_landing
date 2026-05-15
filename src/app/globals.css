@@ -244,7 +244,7 @@ body {
     @apply flex-center flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
 
     h2 {
-      @apply relative text-7xl sm:text-8xl md:text-9xl lg:text-10xl text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-8;
+      @apply relative text-7xl sm:text-8xl md:text-9xl lg:text-[20vw] text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-8;
     }
 
     .content {
