@@ -92,7 +92,7 @@ body {
     @apply relative z-10 min-h-dvh w-full border border-transparent;
 
     h1 {
-      @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra;
+      @apply md:mt-32 mt-40 text-7xl min-[450px]:text-8xl md:text-[20vw] leading-none text-center font-modern-negra;
     }
 
     .left-leaf {
@@ -244,7 +244,7 @@ body {
     @apply flex-center flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
 
     h2 {
-      @apply relative xl:text-8xl text-6xl md:text-7xl text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-8;
+      @apply relative text-7xl sm:text-8xl md:text-9xl lg:text-10xl text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-8;
     }
 
     .content {
